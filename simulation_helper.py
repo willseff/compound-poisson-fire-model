@@ -88,8 +88,9 @@ def get_fire_data(greater_than_100=False):
     if greater_than_100:
         extensive = extensive[extensive.SIZE_HA > 100]
         intensive = intensive[intensive.SIZE_HA > 100]
+        joined = joined[joined.SIZE_HA > 100]
 
-    return intensive, extensive
+    return joined, intensive, extensive
 
 def fit_fire_size_distribution(data):
     # get the average fire size to fit an expnential distribution
