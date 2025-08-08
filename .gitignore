@@ -15,3 +15,6 @@ nbac/
 # ignore _pycache_ folders
 __pycache__/
 
+# ignore build folder
+build/
+

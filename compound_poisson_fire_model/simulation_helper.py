@@ -6,12 +6,12 @@ import matplotlib.pyplot as plt
 from scipy.stats import expon, pareto
 from scipy.stats import gamma
 
-def get_fire_data(greater_than_100=False):
+def get_fire_data(greater_than_100=False, file_path=None, zones_path=None):
     # Read the fire data
-    gdf = gpd.read_file("nfdb/NFDB_point_20250519.shp")
+    gdf = gpd.read_file(file_path)
 
     # read in the historical fire management zones
-    zones = gpd.read_file("historical_fire_zones\Historical_Fire_Management_Zones.shp")
+    zones = gpd.read_file(zones_path)
 
     # Ensure both GeoDataFrames use the same CRS
     gdf = gdf.to_crs(zones.crs)
