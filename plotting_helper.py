@@ -6,13 +6,14 @@ import pandas as pd
 
 def plot_fire_size_distribution(data, fire_size_params,
     upper_limit=30000, 
-    title='Fire Size Distribution',
+    title='Extensive Zone Fire Size Distribution 1976-2024',
     **kwargs):
 
     # Generate x values for plotting PDFs
     x = np.linspace(300, 30000, 1000)
 
-    fig, axes = plt.subplots(1, 3, figsize=(18, 7), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6), sharey=True)
+    
 
     # Exponential
     axes[0].hist(data.clip(upper=upper_limit), bins=50, density=True, alpha=0.5, label='Observed', **kwargs)
@@ -59,7 +60,7 @@ def plot_fire_size_distribution(data, fire_size_params,
 def plot_fire_count_distribution(data, fire_count_params, title, **kwargs):
     # same as above but there is two distributiions, exponential and gamma
     x = np.linspace(0, 120, 1000)
-    fig, axes = plt.subplots(1, 2, figsize=(14, 7), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(14, 4), sharey=True)
     # Exponential
     axes[0].hist(data, bins=15, density=True, alpha=0.5, label='Observed', **kwargs)
     exp_scale = fire_count_params['exponential']
