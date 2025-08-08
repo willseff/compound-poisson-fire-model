@@ -1,1 +1,17 @@
 .DS_Store
+
+# ignore nfdb folder
+nfdb/
+
+# ignore nbac folder
+nbac/
+
+# ignore xlsx files
+*.xlsx
+
+# ignore json files
+*.json
+
+# ignore _pycache_ folders
+__pycache__/
+
