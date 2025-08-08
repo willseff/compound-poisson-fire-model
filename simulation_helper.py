@@ -124,7 +124,8 @@ def fit_cox_process(data):
 def generate_samples(parameters, size=1000):
     # Generate samples from the fitted distributions cox process
     sim_lambdas = {"gamma": gamma.rvs(*parameters["gamma"], size=size),
-               "exponential": expon.rvs(scale=parameters["exponential"], size=size)}
+               "exponential": expon.rvs(scale=parameters["exponential"], size=size),
+               "constant": np.full(size, parameters["exponential"])}  # constant rate for comparison
         
 
     #use simulated_lambas to generate samples using poisson process
