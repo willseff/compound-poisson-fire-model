@@ -18,3 +18,5 @@ __pycache__/
 # ignore build folder
 build/
 
+# ignore .egg-info files
+*.egg-info/
